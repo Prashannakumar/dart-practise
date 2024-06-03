@@ -6,7 +6,7 @@ void main(List<String> args) {
   var integerReturn = integerReturnFun();
   print("We return an integer: $integerReturn");
   print(stringReturn('John', "Jericho Town"));
-  print(getRecurse(5));
+  print({getRecurse(5), 'final'});
 }
 
 void isTrue() {
@@ -40,11 +40,11 @@ int integerReturnFun() {
 String stringReturn(String name, String address) =>
     "This is $name and this is $address and we have used fat arrow method.";
 
-int getRecurse(int num) {print(num);
+int getRecurse(int num) {
   if (num > 1) {
-    int res = num * getRecurse(num - 1);
-    print("In getRecurse and num is $num and response is $res");
-    return res;
+    // int res = num * getRecurse(num - 1);
+    print("In getRecurse and num is $num");
+    return num * getRecurse(num - 1);
   } else
     return 1;
 }
