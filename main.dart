@@ -13,9 +13,10 @@ void main(List<String> args) {
     print("${newCar.carName} stops. It has model number ${newCar.carModel}.");
   }
 
-  bearFun();
-  urlFun();
-  getSetFun();
+  // bearFun();
+  // urlFun();
+  // getSetFun();
+  bearTrackingFun();
 }
 
 bearFun() {
@@ -70,4 +71,17 @@ getSetFun(){
   var myObject = myClass();
   myObject.setName = "Sanjib";
   print(myObject.getName);
+}
+
+bearTrackingFun(){
+  //bear1 is reference variable
+  // BearTracking() is object
+  var bear1 = BearTracking(1);
+  bear1.trackingBear();
+
+  var bear2 = BearTracking.firstNamedConstructor(2);
+  bear2.trackingBear();
+
+  var bear3 = BearTracking.secondNamedConstructor(3);
+  bear3.trackingBear();
 }

@@ -16,7 +16,7 @@ ifElseFun() {
   bool thirdButtonTouch = true;
   bool fourthButtonTouch = false;
 
-  firstButtonUntouch ??= firstButtonTouch;
+  firstButtonUntouch ??= firstButtonTouch; //"??=" Assignment Operator
   // firstButtonUntouch = false;
   print(firstButtonUntouch);
   if (firstButtonTouch)

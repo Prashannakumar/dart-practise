@@ -18,3 +18,23 @@ class Bear {
     return weightGain;
   }
 }
+
+class BearTracking {
+  //reference variable
+  int collarID;
+
+  //default and parameterized constructor
+  BearTracking(this.collarID);
+
+  //first named constructor
+  BearTracking.firstNamedConstructor(this.collarID);
+  
+  //second named constructor
+  BearTracking.secondNamedConstructor(this.collarID);
+
+  void trackingBear(){
+    String? color; //local variable
+    print("Tracking the bear with collar ID $collarID, color is $color");
+  }
+
+}
