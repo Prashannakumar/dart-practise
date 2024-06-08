@@ -18,7 +18,7 @@ class Animal {
   }
 }
 
-// single inheritance
+////////////// single inheritance //////////////
 class Cat extends Animal with DogRun {
   //overriding parent constructor
   //although constructors are not inherited
@@ -68,7 +68,7 @@ class Cow extends Animal {
   }
 }
 
-// multilevel inheritance
+////////////// multilevel inheritance //////////////
 class Dog extends Animal {
   //overriding parent constructor although constructor are not inherited
   Dog() : super() {
@@ -125,18 +125,64 @@ class PuppyDog extends Dog {
   }
 }
 
+////////////// abstract class //////////////
+
+abstract class volume {
+  late int age;
+  void increase();
+  void decrease();
+  void anyNormalFunction(int age) {
+    print("This is a normal function to know the $age");
+  }
+}
+
+class soundSystem extends volume {
+  void increase() {
+    print("Sound is up.");
+  }
+
+  void decrease() {
+    print("Sound is down.");
+  }
+
+  void anyNormalFunction(int age) {
+    print(
+        "This is a normal function to know how old the sound system is: $age.");
+  }
+}
+
+abstract class Mammal{
+  void run();
+  void walk();
+  void sound(){
+    print("Mammals make sound");
+  }
+}
+
+class Human implements Mammal{
+  void run(){
+    print("I am running");
+  }
+  void walk(){
+    print("I am walking");
+  }
+  void sound(){
+    print("Humans make sound");
+  }
+}
+
 void main(List<String> args) {
   // var cow = Cow();
   // cow.name = "Daisy";
   // cow.showName();
 
-  var cat = Cat();
-  cat.name = "Meaow";
-  cat.showName();
-  cat.eat();
+  // var cat = Cat();
+  // cat.name = "Meaow";
+  // cat.showName();
+  // cat.eat();
 
-  var anotherCat = Cat.namedConstructor();
-  anotherCat.canRun();
+  // var anotherCat = Cat.namedConstructor();
+  // anotherCat.canRun();
 
   ////////////////multilevel inheritance/////////////////
   // var animal = Animal();
@@ -154,4 +200,18 @@ void main(List<String> args) {
   // puppy.showName();
   // puppy.eat();
   // var anotherPuppy = PuppyDog.namedDogConstructor();
+
+////////////// abstract class //////////////
+  // var newSystem = soundSystem();
+  // newSystem.increase();
+  // newSystem.decrease();
+  // newSystem.anyNormalFunction(10);
+
+  var John = Human();
+  print("John says: ");
+  John.run();
+  print("John says: ");
+  John.walk();
+  print("John makes no sound.");
+  John.sound();
 }
