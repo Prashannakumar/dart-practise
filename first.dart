@@ -135,7 +135,7 @@ mapFun() {
 operatorsFun() {
   int aNum = 12;
   double aDouble = 2.25;
-  var theResult = aNum ~/ aDouble;
+  var theResult = aNum ~/ aDouble; // a special operator '~/' which returns an integer, not a double
   var res = aNum / aDouble;
   print({theResult, res});
 

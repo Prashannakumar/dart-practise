@@ -151,23 +151,92 @@ class soundSystem extends volume {
   }
 }
 
-abstract class Mammal{
+abstract class Mammal {
   void run();
   void walk();
-  void sound(){
+  void sound() {
     print("Mammals make sound");
   }
 }
 
-class Human implements Mammal{
-  void run(){
+class Human implements Mammal {
+  void run() {
     print("I am running");
   }
-  void walk(){
+
+  void walk() {
     print("I am walking");
   }
-  void sound(){
+
+  void sound() {
     print("Humans make sound");
+  }
+}
+
+// interface in Dart is a class, but we don't extend,
+// we implement it
+class Vehicle {
+  void steerTheVehicle() {
+    print("The vehicle is moving.");
+  }
+}
+
+class Engine {
+  //in the interface
+  final _name;
+  Engine(this._name);
+  String lessOilConsumption() {
+    return "It consumes less oil";
+  }
+}
+
+class Car implements Vehicle, Engine {
+  var _name;
+
+  void steerTheVehicle() {
+    print("The car is moving.");
+  }
+
+  String lessOilConsumption() {
+    // throw "The model of car consumes less oil.";
+    print("The model of car consumes less oil.");
+    return "The model of car consumes less oil.";
+  }
+
+  void ridingExperience() =>
+      print("The car gives good ride, because it is an ${this._name}");
+}
+
+class OrderDetails {
+  var age;
+  void anyNormalFunction(int age) {
+    print("This is a normal function to know the age, $age");
+  }
+
+  void UpdateCustomers() {}
+  void TakeOrder() {}
+}
+
+abstract class CustomerDetails {
+  void Customers() {
+    // print("A list of customers.");
+  }
+}
+
+class ItemDetails extends CustomerDetails implements OrderDetails {
+  var age;
+  void anyNormalFunction(int age) {
+    print("This is a normal function to know the age: $age");
+  }
+
+  void UpdateCustomers() {
+    //implementing interface members
+    print("Updating customers.");
+  }
+
+  void TakeOrder() {
+    //implemeting interface members
+    // print("Taking orders from customers.");
   }
 }
 
@@ -207,11 +276,25 @@ void main(List<String> args) {
   // newSystem.decrease();
   // newSystem.anyNormalFunction(10);
 
-  var John = Human();
-  print("John says: ");
-  John.run();
-  print("John says: ");
-  John.walk();
-  print("John makes no sound.");
-  John.sound();
+  // var John = Human();
+  // print("John says: ");
+  // John.run();
+  // print("John says: ");
+  // John.walk();
+  // print("John makes no sound.");
+  // John.sound();
+
+//////////////////interface//////////////////
+  //  var car = Car();
+  //  car._name = 'Opel';
+  //  print("Car name: ${car._name}");
+  //  car.steerTheVehicle();
+  //  car.lessOilConsumption();
+  //  car.ridingExperience();
+
+  var book = ItemDetails();
+  book.TakeOrder();
+  book.UpdateCustomers();
+  book.anyNormalFunction(12);
+  // book.Customers();
 }
