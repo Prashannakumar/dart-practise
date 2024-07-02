@@ -3,10 +3,10 @@ void main(List<String> args) {
   // boolFun();
   // ifElseFun2();
   // conditionalExp();
-  // loopFun();
+  loopFun();
   // labelsLoop();
   // loopContinue();
-  switchCase();
+  // switchCase();
 }
 
 ifElseFun() {
@@ -157,7 +157,7 @@ loopFun() {
   while (num >= 1) {
     factorial = factorial * num;
     num--;
-    print("'=>' ${num}");
+    print("'=>' ${num}, in while");
   }
   print("The factorial is ${factorial}, while");
 
